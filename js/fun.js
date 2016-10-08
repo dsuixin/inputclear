@@ -1,13 +1,13 @@
 /**清空按钮--start**/
-//$(".urog-form-role input").keyup(function() {
-//	$(this).next('.urog-regclose').css("display", "none");
-//	$(this).next('.urog-regclose').css("display", "inline-block");
-//
-//});
-//$(".urog-regclose").click(function() {
-//		$(this).prev('input').val(null);
-//		$(this).css("display", "none");
-//})
+//得到点击事件的dom结构
+function getEventTrigger(event)
+{ 
+	//ie 火狐 event兼容
+	//参考资料： http://www.cnblogs.com/quanhai/archive/2010/04/20/1716149.html
+	event = event? event: window.event
+	var x = event.srcElement ? event.srcElement:event.target;
+	return x;
+}
 /*提示弹框*/
 function alertError(text) {
 	event.preventDefault();
