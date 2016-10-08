@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="环球漫游">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="环球漫游">
+	<meta name="description" content="环球漫游">
+		<title>登录</title>
+		<link rel="stylesheet" href="css/uroa-basic.css">
+		<link rel="stylesheet" href="css/uroa-index.css"> 
+	</head>
+
+	<body>
+	   <div class="uroa-content">
+			<header class="urog-header urog-center"> 
+				<a href="#" class="urop-link urop-return"></a>
+				<span class="urog-title-font  urog-center">会员登录</span>
+			</header>
+			<div class="urog-main">
+				<div class="urog-reglogo">
+					<img src="images/reglogo.png" class="urog-reglogoimg" />
+				</div>
+				<div class="form">
+					<form id="urog-authenForm" action="a.php" method="post">
+						<p class="urog-form-role urog-phone">
+							<img src="images/tel.png" class="form-label-img" />
+							<input name="phone" id="phone" class="form-input" value="" type="text" placeholder="请输入您的手机号" maxlength="16" />
+							<img src="images/urgclose.png" class="urog-regclose" data-close="phone"/>
+						</p>
+						<p class="urog-form-role">
+							<img src="images/pass.png" class="form-label-img" />
+							<input name="pass" value="" id='pass' type="password" placeholder="请输入密码" maxlength="11" />
+							<img src="images/urgclose.png" class="urog-regclose" data-close="pass"/>
+						</p>
+						<p class="urog-form-role">
+							<img src="images/pass.png" class="form-label-img" />
+							<input name="pass" value="" id='pass2' type="text" placeholder="请输入密码" maxlength="11" />
+							<img src="images/urgclose.png" class="urog-regclose" data-close="pass2"/>
+						</p>
+						<p class="urog-login-text urog-forgetlink"><a href="#">忘记密码？</a></p>
+						<input class="urog-submit-b" type="submit" name="submit" value="登录" />
+						  
+					</form>
+				</div>
+			</div>
+			<!--描述：错误提示弹框-start-->
+			<div class="cd-popup" role="alert">
+				<div class="cd-popup-container">
+					<p class="urog-err">登录</p>
+				</div>
+			</div>
+		</div>
+		<!--描述：错误提示弹框-end-->
+		<script src="js/jquery_1_11_1min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fun.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				 
+				$(".urog-submit-b").click(function() { 
+					var phone = $("#phone").val(),
+					pass = $("#pass").val();
+					var urg_phone = verifyMobile(phone);
+					var urg_pass = verifypass(pass);
+					if (!urg_phone) {
+						alertError("请输入正确的手机号");
+						return false;
+					}else if (!urg_pass) {
+						alertError("请输入6-16位密码,数字和字母的组合");
+						return false;
+					}
+					 $("#urog-authenForm").submit();
+				});
+				 
+				$(".urog-form-role").click(function(event){
+					//得到点击事件的dom结构
+					var click_node = getEventTrigger(event);
+					//得到点击close图片的data-close
+					//data-close的值是input框的id
+					var clickName = click_node.getAttribute("data-close");
+					//得到点击事件的属性（INPUT）
+					var clickInput = click_node.nodeName; 
+					//判断点击的是close图片，则清空相应id输入框的值，并隐藏该close图片
+					if(clickName=='phone'||clickName=='pass'||clickName=='pass2'){
+						$("#"+clickName).val(null);
+						$("#"+clickName).next().css("display","none");
+					}
+					//判断点击事件的元素是input框
+					if(clickInput=="INPUT"){
+						//获取INPUT的id
+						var next_closeId = click_node.id;
+						//绑定获取焦点和输入值-函数
+						$("#"+next_closeId).bind("focus keyup",function(){
+							//判断当前输入框的值不为空时
+							if($("#"+next_closeId).val()!=''){
+								$(".urog-regclose").css("display","none"); 
+								//当前输入框的下一个同袍节点样式显示
+								$("#"+next_closeId).next().css("display","block");
+							}
+							
+						})
+					}
+				})
+				//得到点击事件的dom结构
+				function getEventTrigger(event)
+				  { 
+				  	//ie 火狐 event兼容
+				  	//参考资料： http://www.cnblogs.com/quanhai/archive/2010/04/20/1716149.html
+				  	event = event? event: window.event
+                    var x = event.srcElement ? event.srcElement:event.target;
+				   	return x;
+				  } 
+					 
+					
+				 
+				
+			})
+		</script>
+	</body>
+
+</html>

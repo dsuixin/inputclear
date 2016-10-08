@@ -1,0 +1,53 @@
+﻿/*头部样式*/
+.urog-header {width: 100%;max-width:640px;height: 45px;line-height: 45px;background-color: #e50044;position: fixed;top: 0;font-size:16px;}
+.urog-title-font {font-size: 16px;color: #ffffff;}
+.urog-center {text-align: center;}
+.urog-img {width: 12px;height: auto;margin-top: 12px;margin-left: 10px;}
+.urog-main{width:100%;height: auto;margin-top:55px;}
+
+/* 登录注册 */
+input{-webkit-appearance: none;}
+.urog-reglogo{    width: 74px;height: 76px; border: 4px solid #eeeeee; border-radius:41px;     margin: 80px auto 40px auto;}
+.urog-reglogoimg{margin-top:17px;margin-left:14px;}
+#urog-authenForm {width: 89%;margin: 0 auto;} 
+.urog-form-role {height: 40px;padding: 0 0 0 4%;border-bottom: 1px #cecece solid; box-sizing: border-box;overflow: hidden;text-align: left;margin-bottom: 10px;}
+.urog-form-role>img,.urog-form-role>input {display: inline-block;vertical-align: middle;float:left; }
+.urog-form-role>img {width: 15px;height: auto;margin-top:8px;}
+.urog-form-role>input {width: 80%;height: 100%;font-size: 16px;color:#252525;padding-left:15px;background-color: transparent;font-family: '\5fae\8f6f\96c5\9ed1';box-sizing:border-box;-webkit-appearance:none;}
+.urog-form-role>input:placeholder {color: #cecece;}
+.urog-form-role>input:-moz-placeholder {color: #cecece;}
+.form-input{width:50%;}
+.urog-jishi{font-size: 15px; line-height: 23px;background-color: #f11721;color: #ffffff;    padding: 2px 6px;float: right; margin-top: 4px;}
+.urog-submit-b{width: 100%;margin: 20px auto;background-color: #f11721;padding: 12px;font-size: 18px;color:#ffffff;cursor:pointer;font-family: '\5fae\8f6f\96c5\9ed1';}
+
+/*注册新增加样式*/
+.urog-form-role>img.urog-regclose{margin-top: 4px;display: none;}
+.urog-form-role>input.regmsg{width:56%;}
+.urog-login-text{text-align:right;width:100%;height:40px;box-sizing: border-box;margin-top:18px;}
+.urog-login-text a{font-size:16px;color:#595959;display:inline-block;width:100%;height:40px;line-height:40px;}
+.urog-r-ma{margin-bottom:2px;}
+.urog-forgetlink{ margin-top: -1px;height:12px;}
+.urog-forgetlink a{line-height: 20px;height: 20px;}
+.urog-header-reg{float: right;position: absolute;right: 10px;}
+.urog-form-role>img.urog-regicon{margin-top:12px;}
+.uro-feex i:after{ position:absolute;right:0;top:-2px;}
+.urog-boder-right{border-right: 1px solid #ffffff;}
+.coupon p .ur-redg{font-size:16px;}
+.coupon {margin-bottom: 9px; overflow: hidden;
+    min-height: 35px;
+	line-height:35px;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;}
+.ur-mb{border-top:1px solid #dadada;background: #fff url(../images/ur-jrig.png) no-repeat 97.5% center;background-size:9px 15px;}
+.ur-mb .ur-redg{margin-right:20px;}
+.uroa-kbnm p{padding-left:15px;font-size:16px;}
+/**弹出框的样式**/ 
+.img-replace {   display: inline-block;  overflow: hidden;  text-indent: 100%;  color: transparent;  white-space: nowrap;}
+.cd-popup-trigger {  display: block;  width: 170px;  height: 50px;  line-height: 50px;  margin: 3em auto;  text-align: center;  color: #FFF;  font-size: 14px;  font-size: 0.875rem;  font-weight: bold;text-transform: uppercase;  border-radius: 50em;  background: #35a785;  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.07);}
+@media only screen and (min-width: 1170px) {  .cd-popup-trigger {    margin: 6em auto;  }}
+.cd-popup {  position: fixed;  left: 0;  top: 0;  height: 100%;  width: 100%;   opacity: 0;  visibility: hidden; }
+.cd-popup.is-visible {  opacity: 1;  visibility: visible;  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;  transition: opacity 0.3s 0s, visibility 0s 0s;  z-index: 12;}
+.cd-popup-container {  position: relative;  width: 60%;  margin: 60% auto;  background: rgba(0, 0, 0, 0.5);  border-radius: .4em;  text-align: center;}
+.cd-popup-container p {  padding: 1em 1em;  color:#ffffff;  font-size:14px;}
+@media only screen and (min-width: 1170px) {  .cd-popup-container {    margin: 8em auto;  }}
